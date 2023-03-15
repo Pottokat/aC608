@@ -1,0 +1,35 @@
+
+
+White part
+
+Core board has 124 pad
+85 two-way general IO
+5 pairs of LVDS IO (can be used as two-way general IO)
+1 pair LVDS clock input IO
+12 clock input IO (not including LVDS clock input IO)
+5 GND (hardware connected)
+4 VDD3.3 input (hardware connected)
+1 VDD2.5 output
+1 VDD1.2 output
+4 JTAG IO
+
+Board has 50MHz clock, input from E15 
+Board has W25Q16, 16M SPI Flash, compatible with EPCS16
+The IO covered by SDRAM  are all independent, not shared with any stamp holes IO
+
+
+Green part
+Clock input signal can only be used as clock or regular signal, can not be used as output, doesn’t support pull up or down.
+When not used, recommend ground. Also 92 and 93 can be used for LVDS clock input.
+
+Pink
+LVDS functional pin, if you need to use LDVS pin you need to make sure core board R9 empty welding, R8 uses 0R or Ferrite bead short circuit.
+If using for general IO, then R9 needs to use 0R resistor or R8 empty welding (this is default factory setting for core board)
+
+Grey
+All GND is connected
+
+Red
+VDD3.3 is external 3.3v input power. Powered by base board(?), all VDD3.3 are connected.
+VDD2.5 voltage output, can be used as low power output to base board, e.g. powering the JTAG
+VDD1.2 voltage output, can be used as low power output to base board
